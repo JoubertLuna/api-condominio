@@ -3,11 +3,13 @@
 namespace App\Providers;
 
 use App\Repositories\{
-  CompanyRepository
+  CompanyRepository,
+  UserRepository
 };
 
 use App\Repositories\Contracts\{
-  CompanyRepositoryInterface
+  CompanyRepositoryInterface,
+  UserRepositoryInterface
 };
 
 use Illuminate\Support\ServiceProvider;
@@ -21,7 +23,12 @@ class RepositoryServiceProvider extends ServiceProvider
   {
     $this->app->bind(
       CompanyRepositoryInterface::class,
-      CompanyRepository::class
+      CompanyRepository::class,
+    );
+
+    $this->app->bind(
+      UserRepositoryInterface::class,
+      UserRepository::class
     );
   }
 

@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\API\Condominio\{
-  CompanyController
+  CompanyController,
+  UserController
 };
 
 use Illuminate\Support\Facades\Route;
@@ -14,6 +15,7 @@ Route::get('/', function () {
 });
 
 
-#Cadastros Base { Company }
-Route::resource('/company', CompanyController::class);
-#Cadastros Base { Company }
+#Cadastros Base { Company / User }
+Route::resource('company', CompanyController::class);
+Route::resource('user', UserController::class);
+#Cadastros Base { Company / User }
